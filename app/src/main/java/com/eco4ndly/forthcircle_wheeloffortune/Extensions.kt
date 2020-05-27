@@ -27,3 +27,5 @@ inline fun SharedPreferences.edit(commit: Boolean = false, action: SharedPrefere
 }
 
 fun Context.toast(text: String, duration: Int = Toast.LENGTH_SHORT) = Toast.makeText(this, text, duration).show()
+
+typealias ProjectColor = R.color

@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
 
             btn_spin.setOnClickListener {
-                //luckyWheel.startLuckyWheelWithTargetIndex(3) //for film
                 luckyWheel.startLuckyWheelWithRandomTarget()
             }
 
@@ -83,7 +82,12 @@ class MainActivity : AppCompatActivity() {
             val luckyItem = LuckyItem()
             luckyItem.topText = it.value
             luckyItem.secondaryText = it.index.toString()
-            luckyItem.color = 0xffFFF3E0.toInt()
+            //luckyItem.color = 0xffFFF3E0.toInt()
+            if (it.index % 2 == 0) {
+                luckyItem.color = 0xffffd54f.toInt()
+            } else {
+                luckyItem.color = 0xffffe57f.toInt()
+            }
             luckyItems.add(luckyItem)
         }
 
@@ -92,7 +96,6 @@ class MainActivity : AppCompatActivity() {
 
         luckyWheel.setLuckyRoundItemSelectedListener {
             Handler().postDelayed({
-                //val text = SharedPre.sharedPreferences.getString(SharedPre.SURPRISE, "You loose") //hardcoded for film
                 val text = "You won ${ConstVal.items[it]}"
                 Bundle().apply {
                     putString(SurpriseRevealDialogFragment.SURPRISE, text)
@@ -100,10 +103,6 @@ class MainActivity : AppCompatActivity() {
                     dialog.arguments = this
                     dialog.setOnDialogCloseListener(object : DialogFragmentDismissListener {
                         override fun onClose(closeApp: Boolean) {
-                            /*SharedPre.sharedPreferences.edit {
-                                putBoolean(SharedPre.SHOW_CLICK_HERE, false).apply()
-                                finish()
-                            }*/
                             if (closeApp) finish()
                         }
 
