@@ -1,5 +1,9 @@
 # Wheel of Fortune
 
+## App Developed for a short film on youtube.
+[Watch Online](https://www.youtube.com/watch?v=bbCnia1-EVg)
+[Subscribe](https://www.youtube.com/channel/UCZJ7JKwSwt1lkjCAhL6Id4w)
+
 ### How to use the app?
 ##### To Reset App
 Long pres here
