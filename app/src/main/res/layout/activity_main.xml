@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#424242"
+    >
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:src="@drawable/plutus_logo"
+      android:alpha="0.3"
+      android:scaleType="matrix"
+      app:layout_constraintTop_toBottomOf="@+id/tv_website"
+      />
+
+  <TextView
+      android:id="@+id/tv_website"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#FFFFFF"
+      android:paddingVertical="5dp"
+      android:paddingHorizontal="5dp"
+      android:textStyle="bold"
+      android:text="https://www.plutuscorp.com"
+      app:layout_constraintTop_toTopOf="parent"
+      android:elevation="8dp"
+      android:drawableStart="@drawable/ic_plutus_logo"
+      android:gravity="center_vertical"
+      android:drawablePadding="4dp"
+      />
+
+  <ProgressBar
+      android:id="@+id/main_progress"
+      style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="4dp"
+      app:layout_constraintTop_toBottomOf="@id/tv_website"
+      android:progress="50"
+      />
+
+  <TextView
+      android:id="@+id/tv_txt"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:gravity="center"
+      android:fontFamily="@font/almendra_diaplay"
+      android:text="Wheel of Fortune"
+      android:textColor="#FFFFFF"
+      android:textSize="36sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/luckyWheel"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <rubikstudio.library.LuckyWheelView
+      android:id="@+id/luckyWheel"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintDimensionRatio="1:1"
+      android:layout_centerInParent="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:lkwBackgroundColor="#FF9800"
+      app:lkwCenterImage="@drawable/wheel2"
+      app:lkwCursor="@drawable/ic_cursor"
+      app:lkwTopTextColor="#263238"
+      android:layout_marginHorizontal="10dp"
+      />
+
+  <Button
+      android:id="@+id/btn_spin"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/luckyWheel"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Spin"
+      android:background="#00e676"
+      android:textColor="#424242"
+      android:textAllCaps="false"
+      android:layout_marginTop="10dp"
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

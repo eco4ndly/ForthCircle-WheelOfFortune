@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#80000000"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Congratulations"
+        android:textColor="#FFFFFF"
+        android:textStyle="italic"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/tv_you_won"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="You won Death"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Spin Again to win more"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        />
+
+</LinearLayout>

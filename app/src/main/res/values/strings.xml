@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ForthCircle-WheelOfFortune</string>
+    <string name="you_dead_message">You are dead. You can\'t spin anymore</string>
+</resources>
