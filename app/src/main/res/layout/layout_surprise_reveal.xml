@@ -35,14 +35,13 @@
         />
 
     <TextView
-        android:id="@+id/tv_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Spin Again to win more"
+        android:text="Come Back Tomorrow"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         />

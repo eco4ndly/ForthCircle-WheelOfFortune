@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
 
 
             btn_spin.setOnClickListener {
-                //luckyWheel.startLuckyWheelWithTargetIndex(3) //for film
-                luckyWheel.startLuckyWheelWithRandomTarget()
+                //5
+                luckyWheel.startLuckyWheelWithTargetIndex(3)
             }
 
             tv_txt.setOnClickListener {
@@ -79,10 +79,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpLuckyWheel() {
         val luckyItems = mutableListOf<LuckyItem>()
-        ConstVal.items.withIndex().forEach {
+
+        for (i in 1..9) {
             val luckyItem = LuckyItem()
-            luckyItem.topText = it.value
-            luckyItem.secondaryText = it.index.toString()
+            luckyItem.topText = "Surprise"
+            luckyItem.secondaryText = i.toString()
+            //luckyItem.icon = R.drawable.fox
             luckyItem.color = 0xffFFF3E0.toInt()
             luckyItems.add(luckyItem)
         }
@@ -92,19 +94,17 @@ class MainActivity : AppCompatActivity() {
 
         luckyWheel.setLuckyRoundItemSelectedListener {
             Handler().postDelayed({
-                //val text = SharedPre.sharedPreferences.getString(SharedPre.SURPRISE, "You loose") //hardcoded for film
-                val text = "You won ${ConstVal.items[it]}"
+                val text = SharedPre.sharedPreferences.getString(SharedPre.SURPRISE, "You loose")
                 Bundle().apply {
                     putString(SurpriseRevealDialogFragment.SURPRISE, text)
                     val dialog = SurpriseRevealDialogFragment()
                     dialog.arguments = this
                     dialog.setOnDialogCloseListener(object : DialogFragmentDismissListener {
-                        override fun onClose(closeApp: Boolean) {
-                            /*SharedPre.sharedPreferences.edit {
+                        override fun onClose() {
+                            SharedPre.sharedPreferences.edit {
                                 putBoolean(SharedPre.SHOW_CLICK_HERE, false).apply()
                                 finish()
-                            }*/
-                            if (closeApp) finish()
+                            }
                         }
 
                     })
